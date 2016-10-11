@@ -14,6 +14,7 @@
 
 ###第一步：切换到 hello 的 Android 工程路径。
 
+这些操作都是在cmd命令行中进行操作
 
 	C:\Users\Administrator>d:
 
@@ -22,34 +23,34 @@
 
 ###第二步：清理编译临时文件。
 
-`D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>clean.bat`
+	D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>clean.bat
 
 不一定每次都需要清理，但是建议编译 release 版本一定要先清理后打包。
 
 编译 Quick-Cocos2dx-Community 引擎的 C++ 核心。
 
 ###第三步：
-`D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>build_native.bat`
+	D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>build_native.bat
 
 这个过程调用 NDK 进行编译，并生成 libcocos2dlua.so 文件。如果一切顺利，应该看到下面的 log 信息：
 
-`[armeabi] SharedLibrary  : libcocos2dlua.so
-[armeabi] Install        : libcocos2dlua.so => libs/armeabi/libcocos2dlua.so
-make.exe: Leaving directory `D:/cocos/workspace/hello/frameworks/runtime-src/proj.android`
+	[armeabi] SharedLibrary  : libcocos2dlua.so
+	[armeabi] Install        : libcocos2dlua.so => libs/armeabi/libcocos2dlua.so
+	make.exe: Leaving directory `D:/cocos/workspace/hello/frameworks/runtime-src/proj.android
 
 ###第四步：更新 test 的 Android 项目配置信息。
 
-`D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>android update project -p . -t 1`
+	D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>android update project -p . -t 1
 
 这步只需做一次即可。
 
 ###第五步：更新 Quick-Cocos2dx-Community 引擎工程的 Android 项目配置信息。
 
-'D:\>cd D:\cocos\quick-3.3\cocos\platform\android\java'
+	D:\>cd D:\cocos\quick-3.3\cocos\platform\android\java
 
 切换到cocos引擎安装目录下的\cocos\platform\android\java
 
-'D:\cocos\quick-3.3\cocos\platform\android\java>android update project -p . -t 1'
+	D:\cocos\quick-3.3\cocos\platform\android\java>android update project -p . -t 1
 
 这步只需做一次即可。
 
@@ -64,19 +65,19 @@ android.library.reference.1=../../../../../../quick-3.3/cocos/platform/android/j
 
 ###第七步：切换回 test 工程下的 proj.android 目录，运行 ant 打包命令。
 
-`D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
-D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>ant debug`
+	D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
+	D:\cocos\workspace\hello\frameworks\runtime-src\proj.android>ant debug
 
 注：如果遇到类似resolve to a path with no project.properties的错误提示信息，请仔细检查 project.properties 中的引擎相对路径是否正确配置。
 
 成功编译将看到如下 log 信息：
 
-`-post-build:
+	-post-build:
 
-debug:
+	debug:
 
-BUILD SUCCESSFUL
-Total time: 19 seconds`
+	BUILD SUCCESSFUL
+	Total time: 19 seconds
 
 apk 文件位于proj.android/bin/hello-debug.apk。
 
