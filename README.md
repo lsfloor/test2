@@ -14,11 +14,11 @@
 
 ###第一步：切换到 hello 的 Android 工程路径。
 
-`
-C:\Users\Administrator>d:
 
-D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
-`
+	C:\Users\Administrator>d:
+
+	D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
+
 
 ###第二步：清理编译临时文件。
 
@@ -61,6 +61,7 @@ android.library.reference.1=../../../../../../quick-3.3/cocos/platform/android/j
 
 >每次执行第 4 步骤后，都需要重新配置 project.properties。
 >android.library.reference只认相对路径，所以 Quick-Cocos2dx-Community 和 test 一定要都在同一盘符下。
+
 ###第七步：切换回 test 工程下的 proj.android 目录，运行 ant 打包命令。
 
 `D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
