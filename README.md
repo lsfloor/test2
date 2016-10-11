@@ -14,9 +14,11 @@
 
 ###第一步：切换到 hello 的 Android 工程路径。
 
-`C:\Users\Administrator>d:
+`
+C:\Users\Administrator>d:
 
-D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android`
+D:\>cd D:\cocos\workspace\hello\frameworks\runtime-src\proj.android
+`
 
 ###第二步：清理编译临时文件。
 
